@@ -1,7 +1,7 @@
 @extends('user.layout')
 @section('main')
 <div class="action">
-    <form class="action-create" action="{{ route('user.store')}}" method="POST">
+    <form class="action-create" action="{{ route('user.showForm')}}" method="POST">
         <button type="submit">Create New User</button>
     </form>
 </div>
@@ -21,10 +21,11 @@
                 </tr>
             </thead>
             <tbody>
-            <?php $count=0 ?>
+            <?php $count=1 ?>
+            @if($users)
             @foreach($users as $user)
                 <tr>
-                    <td>{{$count}}</td>
+                    <td>{{$count++}}</td>
                     <td>{{ $user->first_name }}</td>
                     <td> {{ $user->last_name }} </td>
                     <td> {{ $user->phone_number }}</td>
@@ -33,20 +34,23 @@
                     <td> {{ $user->password }}</td>
                     <td>
                             <div class="action">
-                                <form  action="{{ route('user.createupdate', ['post' => $user->id]) }}" method="POST">
+                                <form  action="{{ route('user.delete', ['id' => $user->id]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
                                 <div class="btn action-user">
-                                    <button class="btn-delete">Delete</button>
+                                    <button type="submit" class="btn-delete">Delete</button>
                                 </div>
                                 </form>
-                                <form  action="{{ route('user.delete', ['post' => $user->id]) }}" method="POST">
+                                <form  action="{{ route('user.edit', ['id' => $user->id]) }}" method="POST">
                                 <div class="btn action-user">
-                                    <button class="btn-edit">Edit</button>
+                                    <button type="submit" class="btn-edit">Edit</button>
                                 </div>
                                 </form>
                             </div>
                     </td>
                 </tr>
             @endforeach
+            @endif
             </tbody>
         </table>
     </div>

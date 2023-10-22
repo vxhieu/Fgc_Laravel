@@ -1,9 +1,13 @@
 .header-wrapper{
     width: 100%;
-    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    height: 50px;
     background-color: #c7c7c7;
 }
 .header-wrapper .wrapper--title{
     font-size: 27px;
     font-weight: 700;
+    margin-left: 15px;
+
 }

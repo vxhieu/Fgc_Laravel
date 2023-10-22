@@ -17,10 +17,12 @@ use App\Http\Controllers\UserManageController;
 //Route::get('/', function () {
 //    return view('welcome');
 //})
-//Route::get('/user', [UserManageController::class, 'index']);
+Route::get('/user', [UserManageController::class, 'index']);
 //Route::post('/user', 'UserManageController@store')->name('user.store');
-//Route::get('/user/{id}/edit', 'UserManageController@edit')->name('user.createupdate');
-//Route::delete('/user/{id}', 'UserManageController@destroy')->name('user.destroy');
+Route::get('/user/{id}/edit', 'UserManageController@edit')->name('user.edit');
+Route::delete('/user/{id}',  [UserManageController::class,'destroy'])->name('user.delete');
 //Route::post('/register', 'UserManageController@showRegistrationForm')->name('register');
-Route::resource('user', UserManageController::class);
+Route::match(['get', 'post'], '/user/create', [UserManageController::class, 'showForm'])->name('user.showForm');
+Route::post('/register', [UserManageController::class, 'create'])->name('user.create');
+//Route::resource('user', UserManageController::class);
 
