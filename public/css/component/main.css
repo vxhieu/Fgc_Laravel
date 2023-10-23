@@ -33,6 +33,18 @@ tr:hover {
 .action-create button{
     width: 160px;
     height: 40px;
-    border: 1px solid;
     border-radius: 10px;
 }
+.action-user .btn-delete{
+    border-radius: 5px;
+    padding: 0 5px;
+}
+.action{
+    display: flex;
+}
+.action-user .btn-edit{
+    margin-left:5px ;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+

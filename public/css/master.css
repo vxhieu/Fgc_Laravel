@@ -1,6 +1,7 @@
 @import "./component/header.css";
 @import "./component/form.css";
 @import "./component/main.css";
+@import "./base/btn.css";
 *{
     margin: 0;
     padding: 0;

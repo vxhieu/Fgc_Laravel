@@ -2,7 +2,7 @@
 @section('main')
 <div class="action">
     <form class="action-create" action="{{ route('user.showForm')}}" method="POST">
-        <button type="submit">Create New User</button>
+        <button type="submit" class="btn">Create New User</button>
     </form>
 </div>
 <div class="users">
@@ -37,13 +37,13 @@
                                 <form  action="{{ route('user.delete', ['id' => $user->id]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                <div class="btn action-user">
-                                    <button type="submit" class="btn-delete">Delete</button>
+                                <div class="action-user">
+                                    <button type="submit" class="btn-delete btn">Delete</button>
                                 </div>
                                 </form>
                                 <form  action="{{ route('user.edit', ['id' => $user->id]) }}" method="POST">
-                                <div class="btn action-user">
-                                    <button type="submit" class="btn-edit">Edit</button>
+                                <div class="action-user">
+                                    <button type="submit " class="btn-edit btn">Edit</button>
                                 </div>
                                 </form>
                             </div>
