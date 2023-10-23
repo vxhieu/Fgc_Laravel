@@ -57,6 +57,9 @@ class UserManageController extends Controller
     {
         // Handle the user update form submission
     }
+    public function close(): RedirectResponse{
+        return  redirect('/user');
+    }
 
     public function destroy($id)
     {

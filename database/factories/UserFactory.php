@@ -20,8 +20,8 @@ class UserFactory extends Factory
         return [
             'first_name' => $this->faker->firstName,
             'last_name' => $this->faker->lastName,
-            'address' => $this->faker->address,
             'phone_number' => $this->faker->phoneNumber,
+            'address' => $this->faker->address,
             'email' => $this->faker->unique()->safeEmail,
             'password' => bcrypt('password'), // You may want to generate a hashed password using Hash::make() or bcrypt().
             'created_by' => 'VxHieu',

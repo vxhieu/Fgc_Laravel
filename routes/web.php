@@ -24,5 +24,6 @@ Route::delete('/user/{id}',  [UserManageController::class,'destroy'])->name('use
 //Route::post('/register', 'UserManageController@showRegistrationForm')->name('register');
 Route::match(['get', 'post'], '/user/create', [UserManageController::class, 'showForm'])->name('user.showForm');
 Route::post('/register', [UserManageController::class, 'create'])->name('user.create');
+Route::match(['get', 'post'],'/user/close', [UserManageController::class, 'close'])->name('user.close');
 //Route::resource('user', UserManageController::class);
 
