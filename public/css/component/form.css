@@ -8,13 +8,9 @@
     justify-content: center;
     align-items: center;
     background-color: #141414;
-    opacity: 0.6;
+    opacity: 0.97;
 }
 .form-wrap{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 800px;
     padding: 15px 15px 60px;
     border-radius: 12px;
@@ -32,15 +28,16 @@
     border-radius: 5px;
     width: 62px;
     height: 28px;
+    z-index: 10;
 
 }
-.form-action .title {
-    /*position: absolute;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-    /*left: 0;*/
-    /*right: 0;*/
-    /*text-align: center;*/
+.form-action .title span {
+    font-size: 25px;
+    position: absolute;
+    font-weight: 700;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
 .form-data {
     margin-top: 50px;
